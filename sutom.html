@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Sutom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Mini Sutom</h1>
+
+    <div id="rules">
+        <h3>Règles du jeu :</h3>
+        <ul>
+            <li>Le but est de trouver un mot de 4 lettres</li>
+            <li>Pas d'accent, de tiret et de caractères spéciaux</li>
+            <li>6 essais maximum</li>
+            <li>Lettre bien placée = Vert</li>
+            <li>Lettre mal placée = Jaune</li>
+        </ul>
+    </div>
+	
+	<!-- PANNEAU ARCADE -->
+	<div id="arcadePanel">
+
+        <!-- EXPLICATION SCORE -->
+        <div id="scoreRulesArcade">
+            <div id="scoreRulesTitle">COMMENT MARQUER ?</div>
+            <div id="scoreRulesText">
+                <p>Plus vous trouvez le mot rapidement, plus vous gagnez de points !</p>
+                <p>Essai 1 = 60 pts | 2 = 50 pts | 3 = 40 pts | 4 = 30 pts | 5 = 20 pts | 6 = 10 pts</p>
+            </div>
+        </div>
+
+        <!-- SCORE PRINCIPAL -->
+        <div id="scoreBox">
+            <div id="scoreLabel">SCORE</div>
+            <div id="score">0</div>
+        </div>
+
+        <!-- STATISTIQUES -->
+        <div id="scoreboard">
+            <p><strong>Parties :</strong> <span id="gamesPlayed">0</span></p>
+            <p><strong>Victoires :</strong> <span id="wins">0</span></p>
+            <p><strong>Défaites :</strong> <span id="losses">0</span></p>
+            <p><strong>Taux :</strong> <span id="winRate">0%</span></p>
+        </div>
+
+        <button id="resetScore" onclick="resetStats()">Réinitialiser</button>
+
+    </div>
+
+    <!-- ZONE DE JEU -->
+    <div id="game"></div>
+
+    <!-- INPUT -->
+    <input type="text" id="guessInput" maxlength="5" placeholder="Tape un mot">
+    <button onclick="checkGuess()">Valider</button>
+    <button onclick="restartGame()">Rejouer</button>
+
+    <!-- MESSAGE -->
+    <h2 id="message"></h2>
+
+    <script src="script.js"></script>
+</body>
+</html>
